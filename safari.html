@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Vargas Goes on Safari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        p, div {
+            margin: 10px 0;
+        }
+
+        div {
+            color: #006400;
+        }
+
+        #locations, #score, #help {
+            font-weight: bold;
+            color: #006400;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ff8c00;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffa500;
+        }
+
+        /* Game field styling */
+        .game-field {
+            display: grid;
+            grid-template-columns: repeat(6, 100px);
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+
+        .game-field div {
+            width: 100px;
+            height: 100px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+        }
+
+        .game-field img {
+            max-width: 90px;
+            max-height: 90px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Mario Vargas Goes on Safari</header>
+
+    <div class="container">
+        <p>Click on the locations to find rare animals, watch out for the lion!</p>
+        <div id="locations">Number of locations checked is zero.</div>
+        <div id="score">Score is zero.</div>
+        <div>Click for help.</div>
+        <div id="help">Help report</div>
+    </div>
+
+    <!-- Game field (6x6 grid of images) -->
+    <div class="game-field">
+        <!-- Row 1 -->
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+
+        <!-- Row 2 -->
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+
+        <!-- Row 3 -->
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+
+        <!-- Row 4 -->
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+
+        <!-- Row 5 -->
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+
+        <!-- Row 6 -->
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+        <div><img src="tree.png" alt="Tree"></div>
+    </div>
+
+</body>
+</html>
