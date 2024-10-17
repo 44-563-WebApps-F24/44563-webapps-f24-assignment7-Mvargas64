@@ -14,33 +14,51 @@
   <h2>Mario Vargas Speed Check</h2>
 
 <div id="target">Your Time: </div>
-<div id="counter">Count: </div>
+<div id="countdown">Count: </div>
 
-
-  <button type="button"
-  class="btn btn-primary"
-  onclick="button1()">
-  Start Timer</button>
-
-  <button type="button"
-  class="btn btn-primary"
-  id="stopButton">
-  End Timer</button>
-  
+  <button type="button" class="btn btn-primary" id="startButton">Start Timer</button>
+  <button type="button" class="btn btn-primary" id="stopButton">End Timer</button>
   
   <script> 
 
-  // Initialize stopTime variable
   let stopTime = undefined;
 
-// Records the current time when called
-function recordTime() {
-  stopTime = Date.now();
-  console.log("Stop Time:", stopTime); // Logs the value to the console
-}
+  // Records the current time
+  function recordTime() {
+    stopTime = Date.now();
+    // Logs the value to the console
+    console.log("Stop Time:", stopTime); 
+  }
 
-// onclick property of the stop button to call recordTime()
-document.getElementById('stopButton').onclick = recordTime;
+  // onclick property of the stop button to call recordTime()
+  document.getElementById('stopButton').onclick = recordTime;
+
+  function startTime() {
+    // countdown timer
+    let countdownElement = document.getElementById("countdown");
+    let targetElement = document.getElementById("target");
+    stopTime = undefined; //reset
+
+  
+    for (let i = 0; i <= 4; i++) {
+      setTimeout(function() {
+        countdownElement.innerHTML = `Count: ${i}`;
+      }, (4 - i) * 1000);
+    }
+
+    
+    setTimeout(function() {
+      if (stopTime === undefined) {
+        targetElement.innerHTML = "Too Slow"; 
+      } else {
+        let elapsedTime = stopTime - (Date.now() - 4000);
+        targetElement.innerHTML = "Time was " + elapsedTime + " ms"; // Display the elapsed time
+      }
+    }, 4000);
+  }
+
+  // onclick property of the start button to invoke startTime
+  document.getElementById('startButton').onclick = startTime;
 
   </script>
 
