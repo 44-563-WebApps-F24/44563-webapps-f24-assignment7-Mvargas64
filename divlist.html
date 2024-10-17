@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title>divlist</title> 
+	<style>
+		.flex-container {
+			display: flex;  
+			flex-direction: row;
+			background-color: red;
+		}
+
+		.flex-container > div {  /* div children of the flex container */
+			background-color: #f1f1f1; 
+			margin: 10px;  
+			padding: 20px;  
+			font-size: 30px;
+		}
+
+		/* Responsive layout */
+		@media (max-width: 600px) { 
+			.flex-container {
+				flex-direction: column;
+				background-color: green;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Mario Vargas builds list with divs</h1>
+	
+	<div class="flex-container" id="target">
+		<div class="divlist">row item 1</div>   
+		<div class="divlist">row item 2</div>  
+		<div class="divlist">row item 3</div>  
+	</div>
+	
+	<p>Enter text and press a button to add or remove elements from the container.</p>
+
+	
+	<input type="text" id="inputText" placeholder="Enter text">
+	
+	<!--  add and remove -->
+	<button onclick="addFront()">Add Front</button>
+	<button onclick="makeNewDiv()">Add End</button>
+	<button onclick="remove()">Remove</button>
+
+<script>
+	// add a new div element to the end
+	function makeNewDiv(){
+		// Get the value from the input element
+		let inputText = document.getElementById("inputText").value;
+		
+		// Create new div 
+		let element = document.createElement("div");
+		
+		element.innerHTML = inputText;
+		
+		element.className = "divlist";
+		
+		
+		let container = document.getElementById('target');
+		container.appendChild(element);
+		
+	
+	}
+
+	// Function to add a new div element to the front
+	function addFront(){
+		// Get the value from the input element
+		let inputText = document.getElementById("inputText").value;
+		
+		// Create a new div 
+		let element = document.createElement("div");
+		
+		element.innerHTML = inputText;
+		
+	
+		element.className = "divlist";
+		
+		// Get the container and insert the new element at the front
+		let container = document.getElementById('target');
+		container.insertBefore(element, container.firstChild);
+		
+	}
+
+	// Function to remove the middle div element
+	function remove(){
+		
+		let divListItems = document.getElementsByClassName("divlist");
+		
+		
+		let length = divListItems.length;
+		
+		// If the length is greater than 0, remove the middle element
+		if (length > 0) {
+			let middleIndex = Math.floor(length / 2);
+			divListItems[middleIndex].remove();
+		}
+	}
+</script>
+
+</body>
+</html>
